@@ -1,0 +1,93 @@
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+  
+.let_space{
+    letter-spacing: 2px;
+}
+
+.grid{
+    display: grid;
+    grid-gap: 2vmax;
+    border: 3px solid #000000;
+    background-color: #FFFACD;
+    padding: 230px 0;
+    
+}
+ 
+.complaint_button{
+  margin-top: 1vmax;
+  border: 1px solid #00008B;
+  outline: none;
+  background-color: #55acee;
+  color: #000000;
+  padding: 2vmax;
+  cursor: pointer;
+  transition: 0.2s;
+  letter-spacing: 3px;
+  font-size: 70px;
+}
+h3 {
+  font-size: 50px;
+}
+</style>
+	</head>
+<body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('#tet').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/background_process_test',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+</script>
+
+
+<centre>
+<div class='grid'>
+
+        <form action="/background_process_test" method="POST">
+
+                <center>
+              <h3 style="color: blue;" class="let_space">Record your complaint by Touching below button .</h3>
+            </center> 
+        
+        <center>
+            <a href=# id=test><button class='complaint_button' onclick="myFunction()">Register your complaint!</button></a>
+            </center>
+         <center>   
+         
+       <h3  style="color: red;" class="let_space" id="demo"></h3></center>
+       
+                         {% if status %}
+            <center>
+              <h3 id="my-text" style="color: red;" class="let_space">{{status}}</h3>
+            </center> 
+
+          {% endif %}
+        </form>
+
+</div>
+</centre>
+
+<script>
+  setTimeout(function() {
+    document.getElementById("my-text").style.display = "none";
+  }, 2000); // 5000 milliseconds = 3 seconds
+</script>
+
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Recording your voice....";
+}
+</script>
+</body>
+</html>
