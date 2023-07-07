@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<style>
+
+h3 {
+  font-size: 50px;
+}
+.btn {
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  height: 200px;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  width: 200px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn2 {
+  background-color: #ff3333;
+  box-shadow: 0 5px 0 #00008b;
+  font-size:50px;
+  position: absolute;
+  top: 250px;
+  right: 90px;
+}
+.btn2 img {
+    width: 200px; /* adjust the size of the image as per your requirement */
+    margin-right: 0px; /* add some spacing between the image and text */
+}
+.btn1 {
+  background-color: #eeeeee;
+  box-shadow: 0 5px 0 #00008b;
+  position: absolute;
+  top: 250px;
+  left: 90px;
+}
+.btn1 img {
+    width: 200px; /* adjust the size of the image as per your requirement */
+    margin-right: 50px; /* add some spacing between the image and text */
+	
+}
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 0;
+}
+
+.div_classs{
+  border: 20px outset red;
+  background-color: lightblue;    
+  margin: 20px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
+}
+
+</style>
+<center>
+<h3 style="color: green;">
+Record your complaint....!
+</h3>
+</center>
+</head>
+<body>
+<center>
+<img src="{{ url_for('video_feed') }}">
+</center>
+		<button class="btn btn1" onclick="startRecording()"/><img src="/static/record.png" alt="button" border="0"/> </button>
+	<form method="post">
+        <button class="btn btn2" onclick="stopRecording() type="submit"><img src="/static/stop-button.png" alt="button" border="0" /></button>
+    </form>
+	    <center>
+	    <h3  style="color: red;" class="let_space" id="demo"></h3>
+	</center>
+	    <script>
+        function startRecording() {
+            document.getElementById("demo").innerHTML = "Recording your voice....";
+            fetch('/start_recording', {method: 'POST'});
+        }
+		function stopRecording() {
+            document.getElementById("demo").innerHTML = "Recording finished";
+        }
+    </script>
+	
+	</body>
+</html>

@@ -1,0 +1,242 @@
+[
+  {
+    "pattern": [
+      "Hello",
+      "Hi",
+      "How are you",
+      "Is anyone there",
+      "Good day",
+      "What's up",
+      "how are ya",
+      "heyy",
+      "whatsup",
+      "hay",
+      "Good morning",
+      "Good afternoon",
+      "Good evening",
+      "Howdy"
+   ],
+    "responses": [ "Hello!",
+    "Good to see you again!",
+    "Hi there, how can I help?"]
+  },
+
+  {
+    "pattern": [
+      "cya",
+      "see you",
+      "bye bye",
+      "See you later",
+      "Goodbye",
+      "I am Leaving",
+      "Bye",
+      "Have a Good day",
+      "talk to you later",
+      "ttyl",
+      "i got to go",
+      "gtg"
+   ],
+    "responses": [
+      "Sad to see you go :(",
+      "Talk to you later",
+      "Goodbye!",
+      "Come back soon"
+   ]
+  },
+
+  {
+    "pattern": [
+      "name",
+      "your name",
+      "do you have a name",
+      "what are you called",
+      "what is your name",
+      "what should I call you",
+      "whats your name?",
+      "what are you",
+      "who are you",
+      "who is this",
+      "what am i chatting to",
+      "who am i taking to",
+      "what are you"
+   ],
+    "responses":  [
+      "You can call me Mind Reader.",
+      "I'm Mind Reader",
+      "I am a Chatbot.",
+      "I am your helper"
+   ]
+  },
+  {
+    "pattern": [
+      "full form of CDAC",
+      "What is the full form of CDAC",
+      "full form",
+      "full form of C-DAC",
+      "What is the full form of C-DAC",
+      "full form",
+      "What does CDAC stand for",
+      " full name of CDAC",
+      "What does CDAC represent"
+
+   ],
+    "responses": [
+      "CDAC stands for Centre for Development of Advanced Computing"
+   ]
+  },
+  {
+    "pattern": [
+      "When was CDAC established",
+      "CDAC established",
+      "established",
+      "establish",
+      "When was C-DAC established",
+      "C-DAC established",
+      "In which year was CDAC established",
+      "What is the establishment year of CDAC",
+      "At what time was CDAC formed",
+      "When did CDAC begin its journey",
+      "When was CDAC set up"
+   ],
+    "responses": [
+      "CDAC was established in March 1988"
+   ]
+  },
+  {
+    "pattern": [
+      "What are the primary research areas of CDAC",
+      "primary",
+      "research areas of CDAC",
+      "research areas of C-DAC",
+      "research areas ",
+      "areas of CDAC",
+      "areas of C-DAC",
+      "What are the primary research areas of C-DAC"
+   ],
+    "responses": [
+      "CDAC focuses on research areas such as high-performance computing, software technologies, electronics and hardware design, cybersecurity, language technologies, and e-governance solutions"
+   ]
+  },
+  {
+    "pattern": [
+      "How does CDAC contribute to the development of supercomputers",
+      "development of supercomputers",
+      "supercomputers",
+      "supercomputer",
+      "contribute",
+      "How does C-DAC contribute to the development of supercomputers"
+   ],
+    "responses": [
+      "CDAC plays a crucial role in designing and developing indigenous supercomputers like PARAM series, which have made significant contributions to scientific and technological advancements in India."
+   ]
+  },
+  {
+    "pattern": [
+      "Which city CDAC is located",
+      "Which cities in India have CDAC centers",
+      "CDAC centers",
+      "center",
+      "C-DAC centers",
+      "centers",
+      "cities",
+      "city",
+      "located",
+      "citie",
+      "citi",
+      "which city is located",
+      "which cities C-DAC is located",
+      "Which cities in India have C-DAC centers",
+      "What is the location of CDAC city-wise",
+      "In which city is CDAC situated",
+      "Which city is home to CDAC",
+      "In what city can CDAC be found",
+      "Which city houses CDAC",
+      "What is the city where CDAC is located",
+      "What is the city-wise address of CDAC"
+   ],
+    "responses": [
+      "CDAC has centers in cities such as Pune, Mumbai, Bengaluru, Chennai, Kolkata, and Thiruvananthapuram, among others."
+   ]
+  },
+  {
+    "pattern": [
+      "I'm interested in learning more about the courses offered by CDAC Mumbai",
+      "courses",
+      "course",
+      "courses offered by CDAC Mumbai",
+      "courses offered by CDAC",
+      "courses offered by C-DAC Mumbai",
+      "courses offered by C-DAC",
+      "course offer by CDAC Mumbai",
+      "course offer by CDAC",
+      "course offer by C-DAC Mumbai",
+      "course offer by C-DAC"
+   ],
+    "responses": [
+      "That's great! CDAC Mumbai offers a wide range of courses in the field of information technology and electronics. We have programs in areas such as software development, cybersecurity, artificial intelligence, embedded systems, and more. Are you looking for information about a specific course or would you like a general overview"
+   ]
+  },
+  {
+    "pattern": [
+      "The admission process for CDAC ",
+      "give me the admission process for CDAC ",
+      "admission process for CDAC ",
+      "admission",
+      "how can i get admission in cdac",
+      "admission in cdac",
+      "give me a steps to get admission in cdac",
+      "steps",
+      "step"
+   ],
+    "responses": [
+      "The admission process for CDAC typically involves online registration, application form submission, payment of application fee, appearing for the Common Entrance Test (CET), checking the merit list, attending counseling sessions, selecting a course and center, confirming admission by paying the course fee."
+   ]
+  },
+  {
+    "pattern": [
+      "thank you for the information. ",
+      "thank you ",
+      "thankyou",
+      "thank you for the information. ",
+      "Thank you ",
+      "Thankyou",
+      "thanx",
+      "thanq",
+      "Gratitude",
+      "Appreciation",
+      "Acknowledgment",
+      "Recognition",
+      "Thanks",
+      "Gratefulness",
+      "Obligation",
+      "Indebtedness",
+      "Recompense",
+      "Praise"
+    ],
+    "responses": [
+      "You're most welcome! We encourage you to visit our official website for comprehensive information about the software development courses, faculty profiles, facilities, and frequently asked questions"
+   ]
+  },
+  {
+    "pattern": [
+      "I wanted to provide some feedback about my experience with the chatbot for CDAC Mumbai",
+      "feedback",
+      "feedback about my experience  ",
+      "give you some feedback",
+      "give you feedback",
+      "Input",
+      "Response",
+      "Reaction",
+      "Commentary",
+      "Review",
+      "Comment",
+      "Opinion",
+      "Evaluation",
+      "Critique",
+      "Assessment"
+    ],
+    "responses": [
+      "Hello! Thank you for taking the time to provide feedback. We greatly value your input, as it helps us improve our services"
+   ]
+  }
+]

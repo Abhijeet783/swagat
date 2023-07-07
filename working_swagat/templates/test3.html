@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h3 {
+  font-size: 50px;
+}
+
+.btn {
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  height: 200px;
+  margin: 0px 100px 100px;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  width: 200px;
+  transition: all 0.3s ease-in-out;
+  padding-top: 10px
+}
+
+.btn2 {
+  background-color: #ff3333;
+  box-shadow: 0 5px 0 #00008b;
+  font-size:50px;
+}
+.btn2 img {
+    width: 200px; /* adjust the size of the image as per your requirement */
+    margin-right: 0px; /* add some spacing between the image and text */
+}
+.btn1 {
+  background-color: #eeeeee;
+  box-shadow: 0 5px 0 #00008b;
+}
+.btn1 img {
+    width: 200px; /* adjust the size of the image as per your requirement */
+    margin-right: 50px; /* add some spacing between the image and text */
+	
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 0;
+}
+
+.div_classs{
+  border: 20px outset red;
+  background-color: lightblue;    
+  margin: 20px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
+}
+
+</style>
+<center>
+<h3 style="color: red;">
+Welcome to CDAC...!
+</h3>
+</center>
+</head>
+<body>
+<center>
+	<img src="{{ url_for('video_feed') }}">
+
+
+</center>
+
+</body>
+</html>
