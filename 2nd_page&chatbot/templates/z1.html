@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* CSS styles for the navbar and other elements */
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-logo img {
+            height: 154px;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, .8);
+        }
+        
+        .video-container {
+            display: flex;
+            height: calc(100% - 110px);
+        }
+        
+        .video-feed {
+            border: 1px solid black;
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .right-image {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .right-image img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+            /* box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, .8); */
+        }
+        
+        table {
+            border-collapse: collapse;
+            position: absolute;
+            /* top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); */
+        }
+        
+        th,
+        td {
+            border: none;
+            /* padding: 8px; */
+            height: 48px;
+            width: 347px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        .btn {
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            height: 152px;
+            padding: 0;
+            text-align: center;
+            text-decoration: none;
+            width: 152px;
+            transition: all 0.3s ease-in-out;
+        }
+        /* .btn1 {
+            background-color: black;
+            box-shadow: 0 5px 0 #00008b;
+            height: 152px;
+            width: 152px;
+            position: inherit;
+            /* top: 429px; */
+        /* left: 90px; */
+        /* } */
+        /* .btn2 {
+            background-color: #ff3333;
+            box-shadow: 0 5px 0 #00008b;
+            height: 152px;
+            width: 152px;
+            position: inherit;
+            /* font-size: 50px; */
+        /* position: absolute; */
+        /* top: 429px; */
+        /* right: 90px; */
+        /* } */
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 0;
+        }
+        
+        .footer {
+            width: 100%;
+            height: 39px;
+        }
+        
+        .footer img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="../static/logo1.png" alt="Logo">
+        </div>
+        <img src="../static/logo1.png" alt="Logo" style="display: none;">
+    </nav>
+
+    <div class="video-container">
+        <div class="right-image">
+            <img src="../static/background.png" alt="Image">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">FEED BACK</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+
+                            <h4>START Recording</h4>
+                            <!-- <button class="btn" id="btn1"> -->
+                            <button class="btn btn1" onclick="startRecording()" /><img src="../static/record.png " alt="button " border="0 " /> </button>
+                            <!-- <img src="../static/record.png " alt="Button 1 "> -->
+                            <!-- </button> -->
+                        </td>
+                        <td>
+                            <h4>STOP Recording</h4>
+                            <!-- <button class="btn "> -->
+                            <!-- <img src="../static/stop-button.png " alt="Button 2 "> -->
+
+                            <button class="btn btn2 " onclick="stopRecording() " type="submit "><img src="../static/stop-button.png " alt="button " border="0 " /></button>
+                            <!--  </button> -->
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th colspan="2 ">ASK ANY QUESTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h4>
+                                ASK Anything
+                            </h4>
+                            <button class="btn " onclick="start_chatbot()">
+                                <img src="../static/record.png " alt="Button 3 ">
+                            </button>
+                        </td>
+                        <td>
+                            <h4>
+                                STOP
+                            </h4>
+                            <button class="btn " onclick="
+							()">
+                                <img src="../static/stop-button.png " alt="Button 4 ">
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <img src="{{ url_for( 'video_feed') }} " alt="Camera Feed " class="video-feed ">
+    </div>
+
+    <div class="footer ">
+        <img src="../static/footer1.png " alt="Footer Image ">
+    </div>
+    <script>
+        function startRecording() {
+            document.getElementById("demo ").innerHTML = "Recording your voice.... ";
+            fetch('/start_recording', {
+                method: 'POST'
+            });
+        }
+
+        function stopRecording() {
+            document.getElementById("demo ").innerHTML = "Recording finished ";
+        }
+		
+		<!----chatbot script----->
+		
+		function start_chatbot() {
+            fetch('http://127.0.0.1:5000/handle_request',{method:'POST'});
+        }
+		function stop_chatbot() {
+            fetch('http://127.0.0.1:5000/handle_request',{method:'GET'});
+       
+        }
+    </script>
+</body>
+
+</html>

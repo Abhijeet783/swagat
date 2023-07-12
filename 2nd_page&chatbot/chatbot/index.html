@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<body>
+    <form method="post">
+		<button class="btn btn1" onclick="start()"/>Start</button>
+	
+        <button class="btn btn2" onclick="stop()">stop</button>
+    </form>
+
+	    <script>
+        function start() {
+            fetch('http://127.0.0.1:5000/handle_request',{method:'POST'});
+        }
+		function stop() {
+            fetch('http://127.0.0.1:5000/handle_request',{method:'GET'});
+       
+        }
+    </script>
+	
+	</body>
+</html>
