@@ -8,7 +8,7 @@
 </head>
 <style>
     body {
-  overflow-y: hidden; /* Hide vertical scrollbar */
+  <!----overflow-y: hidden;----->/* Hide vertical scrollbar */
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
      .navbar-logo {
@@ -29,24 +29,28 @@
      background-repeat: no-repeat;
      background-position: center;
      text-align: center;
-    
+      height:70vh;
     }
    .side-by-side {
     display: inline-block;
     width: 45%;
-    height: 45%; 
+    height: 70vh; 
     margin: 5px; 
     
    
     }
     #left{
-     background-image: url(../static/background1-removebg-preview.png);
+     background-image: url(../static/background.png);
      background-size: cover; 
      background-repeat: no-repeat; 
      background-position: center;
-     
-
     }
+	
+	#right img{ 
+	margin-bottom:100%;
+	}
+	
+	
     
     .video-feed {
     border: 1px solid black;
@@ -90,7 +94,7 @@ h1 {
   animation: glowing 2s infinite;
 }
 h4 {
-  color: rgb(250, 248, 248); 
+  color: black; 
   font-family: "Georgia", serif;
   font-weight: bold;
   animation: glowing1 2s infinite; 
@@ -119,13 +123,13 @@ h4 {
                     </div>
                 </div>
                 <div class="row ">
-                    <div class="col " style="margin: 10px; ">
+                    <div class="col " ">
                         <h4>START Recording</h4>
                        
                         <button class="btn" onclick="startRecording() " /><img src="../static/record.png" alt="button " border="0 " /> </button>
                         
                     </div>
-                    <div class="col " style=" margin: 10px; ">
+                    <div class="col " ">
                         <h4>STOP Recording</h4>
                         <form method="post"></form>
                         <button class="btn" onclick="stopRecording() " type="submit "><img src="../static/stop-button.png " alt="button " border="0 " /></button>
@@ -137,7 +141,7 @@ h4 {
                     </div>
                 </div>
                 <div class="row ">
-                    <div class="col " style="margin: 20px; ">
+                    <div class="col "  ">
                         <h4>
                             ASK Anything
                         </h4>
@@ -145,7 +149,7 @@ h4 {
                             <img src="../static/record.png " alt="Button 3 ">
                         </button>
                     </div>
-                    <div class="col " style="margin: 20px; ">
+                    <div class="col "  ">
                         <h4>
                             STOP
                         </h4>
@@ -156,7 +160,7 @@ h4 {
                 </div>
             </div>
         </div>
-        <div class="side-by-side">
+        <div class="side-by-side" id="right">
             <img src="{{ url_for( 'video_feed') }} " alt="Camera Feed " class="video-feed ">
         </div>
     </div>
