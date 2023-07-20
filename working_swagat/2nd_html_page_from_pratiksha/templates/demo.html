@@ -1,0 +1,168 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .navbar-logo {
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-logo img {
+        height: 154px;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, .8);
+    }
+    
+    .video-container {
+        display: flex;
+        height: calc(100% - 110px);
+    }
+    
+    .video-feed {
+        border: 1px solid black;
+        /* width: 50%;
+        height: 100%; */
+        object-fit: cover;
+    }
+    
+    .right-image {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .right-image img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        /* box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, .8); */
+    }
+    
+    .btn {
+        border: none;
+        border-radius: 50%;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+        height: 152px;
+        padding: 0;
+        text-align: center;
+        text-decoration: none;
+        width: 152px;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 0;
+    }
+    
+    .col {
+        flex: 1 0 0%;
+        font-size: 40;
+    }
+    
+    .footer {
+        width: 100%;
+        height: 39px;
+    }
+    
+    .footer img {
+        width: 100%;
+    }
+</style>
+
+<body>
+    <!---navbar-->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="../static/logo1.png" alt="Logo">
+        </div>
+        <img src="../static/logo1.png" alt="Logo" style="display: none;">
+    </nav>
+    <!---Middle section----->
+    <div class="video-container">
+        <div class="right-image">
+            <img src="../static/background.png" alt="Image">
+            <div class="container text-center" style="position:absolute;">
+                <div class="row">
+                    <div class="col">
+                        FEEDBACK
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" style="margin: 10px;">
+                        <h4>START Recording</h4>
+                        <!-- <button class=" btn " id="btn1 "> -->
+                        <button class="btn btn1 " onclick="startRecording() " /><img src="/static/record.png " alt="button " border="0 " /> </button>
+                        <!-- <img src="../static/record.png " alt="Button 1 "> -->
+                        <!-- </button> -->
+                    </div>
+                    <div class="col " style=" margin: 10px; ">
+                        <h4>STOP Recording</h4>
+                        <!-- <button class=" btn "> -->
+                        <!-- <img src="../static/stop-button.png " alt="Button 2 "> -->
+
+                        <button class="btn btn2 " onclick="stopRecording() " type="submit "><img src="/static/stop-button.png " alt="button " border="0 " /></button>
+                        <!--  </button> -->
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col " style="margin: 10px; ">
+                        ASK ANY QUESTION
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col " style="margin: 20px; ">
+                        <h4>
+                            ASK Anything
+                        </h4>
+                        <button class="btn ">
+                            <img src="../static/record.png " alt="Button 3 ">
+                        </button>
+                    </div>
+                    <div class="col " style="margin: 20px; ">
+                        <h4>
+                            STOP
+                        </h4>
+                        <button class=" btn ">
+                            <img src="../static/stop-button.png " alt="Button 4 ">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="cam">
+        <img src="{{ url_for( 'video_feed') }} " alt="Camera Feed " class="video-feed ">
+    </div>
+    </div>
+    <!---footer-->
+    <div class="footer ">
+        <img src="../static/footer1.png " alt="Footer Image ">
+    </div>
+
+</body>
+
+</html>
+
+</html>
