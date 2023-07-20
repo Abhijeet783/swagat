@@ -5,7 +5,7 @@ from flask import Flask, Response,render_template, url_for, redirect,request
 import pyaudio,webbrowser,wave
 import time
 from time import sleep
-#import RPi.GPIO as gpio
+import RPi.GPIO as gpio
 from pydub.playback import play
 import threading
 playing_finished=1
@@ -17,7 +17,7 @@ R_EN= 25
 L_DIR= 23
 L_STEP= 18
 L_EN= 24
-'''
+
 gpio.setmode(gpio.BCM)
 
 gpio.setup(R_DIR, gpio.OUT)
@@ -30,7 +30,7 @@ gpio.setup(L_STEP, gpio.OUT)
 gpio.setup(L_EN, gpio.OUT)
 gpio.output(L_EN,0)
 
-'''
+
 flag = 0
 flag2 = 0
 count = 0
@@ -40,7 +40,7 @@ duration=0
 n=0
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-host_ip = '10.212.11.24'  # paste your server ip address here
+host_ip = '10.212.11.20'  # paste your server ip address here
 port = 5001
 client_socket.connect((host_ip, port))  # a tuple
 data = b""
@@ -96,7 +96,7 @@ class RecAUD:
     def stop(self):
         self.st = 0
 #---------------------------------------------------------
-'''
+
 def hand_move():
     sleep(1)
     gpio.output(R_DIR, 0)
@@ -118,7 +118,7 @@ def hand_move():
         gpio.output(R_STEP, gpio.LOW)
         gpio.output(L_STEP, gpio.LOW)
         sleep(0.001)
-'''
+
 
 
 def handle_client(client_socket):
@@ -128,11 +128,14 @@ def handle_client(client_socket):
         if message and playing_finished:
             playing_finished=0
             print('received msg:',message)
-            song = AudioSegment.from_wav("welcome.wav")
-            webbrowser.open("http://127.0.0.1:5000/cool_form")
+            hand_move()
+            song = AudioSegment.from_wav("1.wav")
+            song2 = AudioSegment.from_wav("2.wav")
             print('playing...')
             play(song)
-            playing_finished=1
+            play(song2)
+            webbrowser.open("http://127.0.0.1:5000/cool_form")
+            #playing_finished=1
 def handle_client2(client_socket):
     while (vid.isOpened()):
         img, frame = vid.read()
@@ -141,15 +144,12 @@ def handle_client2(client_socket):
         message = struct.pack("Q", len(a)) + a
         client_socket.sendall(message)
 
-        cv2.imshow('TRANSMITTING VIDEO', frame)
-        key = cv2.waitKey(1) & 0xFF
 
 
 
         #data = client_socket.recv(1024).decode()
         #print(data)
-        if key == ord('q'):
-            client_socket.close()
+
 client_thread=threading.Thread(target=handle_client,args=(client_socket,))
 client_thread2=threading.Thread(target=handle_client2,args=(client_socket,))
 client_thread.start()
@@ -170,7 +170,7 @@ def gen_frames():
 
 @app.route('/')
 def index():
-    return render_template('test3.html')
+    return render_template('test3_2.html')
 @app.route('/video_feed')
 def video_feed():
     print("hello3")
@@ -179,9 +179,13 @@ def video_feed():
 
 @app.route('/cool_form', methods=['GET', 'POST'])
 def cool_form():
+    global playing_finished
     if request.method == 'POST':
         print("stop recording")
         guiAUD.stop()
+        song3 = AudioSegment.from_wav("3.wav")
+        play(song3)
+        playing_finished=1
         return redirect(url_for('index'))
 
     # show the form, it wasn't submitted
@@ -200,3 +204,4 @@ def start_recording():
 if __name__ == '__main__':
     guiAUD = RecAUD()
     app.run(debug=False)
+
